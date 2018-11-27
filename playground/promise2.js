@@ -4,7 +4,7 @@ const geocodeAddress = (address) => {
   return new Promise((resolve, reject) => {
     //call request function, request does not support promises so must wrap in promise function.
     request({
-      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}&key=AIzaSyAPLQS0hKzPuNJmcvt79lOpRjJFv8TdhZk`,
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}&key=`,
       json: true
     }, (error, response, body) => {
       if (error) {
