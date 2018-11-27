@@ -17,7 +17,7 @@ const argv = yargs
 
 //encode the address and get geocode url
 const encodeAddress = encodeURIComponent(argv.address)
-const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}&key=AIzaSyAPLQS0hKzPuNJmcvt79lOpRjJFv8TdhZk`
+const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}&key=*** MAPS API KEY ***`
 
 //use axios get method -> returns a call to weather api -> print data / catch error
 axios.get(geocodeUrl).then((response) => {
@@ -29,7 +29,7 @@ axios.get(geocodeUrl).then((response) => {
   //get the lat and lng from response object from maps api -> form url for weather api call
   const lat = response.data.results[0].geometry.location.lat
   const lng = response.data.results[0].geometry.location.lng
-  const weatherUrl = `https://api.darksky.net/forecast/2a45cf8b7c904ca6163bab29f16a548c/${lat},${lng}`
+  const weatherUrl = `https://api.darksky.net/forecast/*** DARKSKY API KEY ***/${lat},${lng}`
 
   //print the formatted address to console
   console.log(response.data.results[0].formatted_address)
